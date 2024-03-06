@@ -10,22 +10,30 @@ public class TableForm extends JFrame {
     private JTextArea textArea;
     private JTextField textField;
     private JButton button;
+    private JTable table;
     private final JFileChooser fc = new JFileChooser(".");
     private final JMenuBar mainMenu = new JMenuBar();
         private final JMenu optionMenu = new JMenu("Actions");
             private final JMenuItem copyBtn = new JMenuItem("Copy");
             private final JMenuItem loadFileBtn = new JMenuItem("Load File");
 
+
     public TableForm(){
         InitWindow();
         initActionListeners();
         initMenu();
+        initTable();
     }
 
-    public void remakeText(){
-        textArea.setText(String.valueOf(getText()));
-        textField.setText("");
+    public void initTable(){
+        table.setModel(new CustomerTracker());
     }
+    public void remakeText(){
+        //textArea.setText(String.valueOf(getText()));
+        //textField.setText("");
+
+    }
+    public void CreateCustomer
     public StringBuilder getText(){
         StringBuilder text = new StringBuilder();
         text.append(textField.getText()).append("\n").append(textArea.getText());
