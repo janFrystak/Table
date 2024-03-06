@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -11,15 +10,15 @@ public class TableForm extends JFrame {
     private JTextArea textArea;
     private JTextField textField;
     private JButton button;
-    private JFileChooser fc = new JFileChooser(".");
-    private JMenuBar mainMenu = new JMenuBar();
-        private JMenu optionMenu = new JMenu("Actions");
-            private JMenuItem copyBtn = new JMenuItem("Copy");
-            private JMenuItem loadFileBtn = new JMenuItem("Load File");
+    private final JFileChooser fc = new JFileChooser(".");
+    private final JMenuBar mainMenu = new JMenuBar();
+        private final JMenu optionMenu = new JMenu("Actions");
+            private final JMenuItem copyBtn = new JMenuItem("Copy");
+            private final JMenuItem loadFileBtn = new JMenuItem("Load File");
 
     public TableForm(){
         InitWindow();
-        initAcctionListeners();
+        initActionListeners();
         initMenu();
     }
 
@@ -38,9 +37,8 @@ public class TableForm extends JFrame {
         setSize(500, 500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-    public void initAcctionListeners(){
-        button.addActionListener(e-> {remakeText();
-        });
+    public void initActionListeners(){
+        button.addActionListener(e-> remakeText());
     }
 
     public static void main(String[] args) {
