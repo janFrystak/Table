@@ -33,7 +33,7 @@ public class TableForm extends JFrame {
         //textField.setText("");
 
     }
-    public void CreateCustomer
+
     public StringBuilder getText(){
         StringBuilder text = new StringBuilder();
         text.append(textField.getText()).append("\n").append(textArea.getText());
